@@ -8,7 +8,7 @@
 
 ************************************************************************ */
 
-qx.Theme.define("myapp.theme.Appearance",
+qx.Theme.define("studentInfo.theme.Appearance",
 {
   extend : qx.theme.indigo.Appearance,
 

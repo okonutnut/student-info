@@ -8,11 +8,11 @@
 
 ************************************************************************ */
 
-qx.Theme.define("myapp.theme.Decoration",
+qx.Theme.define("studentInfo.theme.Color",
 {
-  extend : qx.theme.indigo.Decoration,
+  extend : qx.theme.indigo.Color,
 
-  decorations :
+  colors :
   {
   }
 });

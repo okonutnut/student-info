@@ -9,11 +9,11 @@
 ************************************************************************ */
 
 /**
- * This is the main application class of "myapp"
+ * This is the main application class of "studentInfo"
  *
- * @asset(myapp/*)
+ * @asset(studentInfo/*)
  */
-qx.Class.define("myapp.Application",
+qx.Class.define("studentInfo.Application",
 {
   extend : qx.application.Standalone,
 
@@ -54,7 +54,7 @@ qx.Class.define("myapp.Application",
       */
 
       // Create a button
-      const button1 = new qx.ui.form.Button("Click me", "myapp/test.png");
+      const button1 = new qx.ui.form.Button("Click me", "studentInfo/test.png");
 
       // Document is the application root
       const doc = this.getRoot();

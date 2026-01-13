@@ -8,14 +8,14 @@
 
 ************************************************************************ */
 
-qx.Theme.define("myapp.theme.Theme",
+qx.Theme.define("studentInfo.theme.Theme",
 {
   meta :
   {
-    color : myapp.theme.Color,
-    decoration : myapp.theme.Decoration,
-    font : myapp.theme.Font,
+    color : studentInfo.theme.Color,
+    decoration : studentInfo.theme.Decoration,
+    font : studentInfo.theme.Font,
     icon : qx.theme.icon.Tango,
-    appearance : myapp.theme.Appearance
+    appearance : studentInfo.theme.Appearance
   }
 });

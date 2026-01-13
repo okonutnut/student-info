@@ -20,9 +20,9 @@
   },
   "applications": [
     {
-      "class": "myapp.Application",
-      "theme": "myapp.theme.Theme",
-      "name": "myapp",
+      "class": "studentInfo.Application",
+      "theme": "studentInfo.theme.Theme",
+      "name": "studentInfo",
       "bootPath": "source/boot"
     }
   ]

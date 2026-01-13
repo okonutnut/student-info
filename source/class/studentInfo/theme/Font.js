@@ -8,7 +8,7 @@
 
 ************************************************************************ */
 
-qx.Theme.define("myapp.theme.Font",
+qx.Theme.define("studentInfo.theme.Font",
 {
   extend : qx.theme.indigo.Font,
 

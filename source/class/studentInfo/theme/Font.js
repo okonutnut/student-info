@@ -8,11 +8,18 @@
 
 ************************************************************************ */
 
-qx.Theme.define("studentInfo.theme.Font",
-{
-  extend : qx.theme.indigo.Font,
+qx.Theme.define("studentInfo.theme.Font", {
+  extend: qx.theme.indigo.Font,
 
-  fonts :
-  {
-  }
+  fonts: {
+    // default: {
+    //   size: 14,
+    //   family: ["Inter", "Segoe UI", "sans-serif"],
+    // },
+    // heading: {
+    //   size: 18,
+    //   bold: true,
+    //   family: ["Inter", "Segoe UI", "sans-serif"],
+    // },
+  },
 });

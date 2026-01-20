@@ -43,10 +43,16 @@ qx.Class.define("studentInfo.Application", {
 
       // Set up the root container
       var doc = this.getRoot();
-      var loginPage = new studentInfo.pages.LoginPage();
+      var loginPage = new studentInfo.pages.LoginPage("TestParameter");
+
+      var tableModel = new qx.ui.table.model.Simple();
+      tableModel.setColumns(["ID", "Name", "Age", "Email"]);
+      var tableData = [[1, "Alice", 20, "alice@email.com"]];
+      tableModel.setData(tableData);
+      var tablePage = new studentInfo.components.TableView(tableModel);
 
       // Add the login page directly to the root
-      doc.add(loginPage, { edge: 0 });
+      doc.add(tablePage, { edge: 0 });
     },
   },
 });

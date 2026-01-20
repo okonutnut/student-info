@@ -1,15 +1,17 @@
 qx.Class.define("studentInfo.pages.LoginPage", {
   extend: qx.ui.container.Composite,
 
-  construct: function () {
+  construct: function (testParam) {
     this.base(arguments);
+
+    console.log("LoginPage initialized with param:", testParam);
 
     // Set the layout for the entire page
     this.setLayout(new qx.ui.layout.Canvas());
 
     // Create a container for the login content
     var loginContainer = new qx.ui.container.Composite(
-      new qx.ui.layout.VBox(10)
+      new qx.ui.layout.VBox(10),
     );
 
     var logo = new qx.ui.basic.Image("studentInfo/student.png");
@@ -46,7 +48,7 @@ qx.Class.define("studentInfo.pages.LoginPage", {
     loginContainer.add(messageLabel);
 
     var madeWithLabel = new qx.ui.basic.Label(
-      "Made with ❤️ by Okonut using Qooxdoo."
+      "Made with ❤️ by Okonut using Qooxdoo.",
     );
     madeWithLabel.set({
       alignX: "center",
@@ -68,7 +70,7 @@ qx.Class.define("studentInfo.pages.LoginPage", {
           messageLabel.setValue("Invalid username or password.");
         }
       },
-      this
+      this,
     );
 
     // Center the login container on the page
@@ -87,7 +89,7 @@ qx.Class.define("studentInfo.pages.LoginPage", {
           top: Math.round((this.getBounds().height - bounds.height) / 2),
         });
       },
-      this
+      this,
     );
   },
 });

@@ -41,18 +41,40 @@ qx.Class.define("studentInfo.Application", {
         qx.log.appender.Console;
       }
 
+      // Global Variable
+      let isLoggedIn = false;
       // Set up the root container
       var doc = this.getRoot();
-      var loginPage = new studentInfo.pages.LoginPage("TestParameter");
 
+      var vbox = new qx.ui.container.Composite(new qx.ui.layout.VBox(10));
+
+      // Login page
+      var loginPage = new studentInfo.pages.LoginPage(isLoggedIn);
+
+      // doc.add(loginPage, {edge: 0})
+      
       var tableModel = new qx.ui.table.model.Simple();
       tableModel.setColumns(["ID", "Name", "Age", "Email"]);
       var tableData = [[1, "Alice", 20, "alice@email.com"]];
       tableModel.setData(tableData);
       var tablePage = new studentInfo.components.TableView(tableModel);
 
+      // Start 
+      doc.add(loginPage, {edge: 0})
+      
       // Add the login page directly to the root
-      doc.add(tablePage, { edge: 0 });
+      loginPage.addListener("changeLoggedIn", function(e) {
+        console.log(e.getData())
+        isLoggedIn = e.getData()
+
+        doc.removeAll();
+
+        if (!isLoggedIn) {
+          doc.add(loginPage, { edge: 0 });
+        } else {
+          doc.add(tablePage, {edge: 0})
+        }
+      })
     },
   },
 });

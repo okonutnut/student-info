@@ -1,8 +1,10 @@
-qx.Class.define("studentInfo.pages.LoginPage", {
+qx.Class.define("studentInfo.pages.MainPage", {
   extend: qx.ui.container.Composite,
 
-  construct: function () {
+  construct: function (testParam) {
     this.base(arguments);
+
+    console.log("LoginPage initialized with param:", testParam);
 
     // Set the layout for the entire page
     this.setLayout(new qx.ui.layout.Canvas());
@@ -24,10 +26,6 @@ qx.Class.define("studentInfo.pages.LoginPage", {
 
     var header = new qx.ui.basic.Label("Student Information System");
     header.setFont("bold");
-    header.set({
-      alignX: "center",
-      alignY: "middle",
-    });
     loginContainer.add(header);
 
     var usernameTextField = new qx.ui.form.TextField();
@@ -66,10 +64,11 @@ qx.Class.define("studentInfo.pages.LoginPage", {
           usernameTextField.getValue() != null &&
           passwordTextField.getValue() != null
         ) {
-          this.setLoggedIn(true);
+          alert("Login successful!");
+          this.hide();
+          return 
         } else {
           messageLabel.setValue("Invalid username or password.");
-          this.setLoggedIn(false);
         }
       },
       this,
@@ -93,12 +92,5 @@ qx.Class.define("studentInfo.pages.LoginPage", {
       },
       this,
     );
-  },
-  properties: {
-    loggedIn: {
-      check: "Boolean",
-      init: false,
-      event: "changeLoggedIn",
-    },
   },
 });
